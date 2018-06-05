@@ -30,6 +30,7 @@ module.exports = function (gruntOrShipit) {
         return createWorkspace()
           .then(initRepository)
           .then(fetchOrigin)
+          .then(fetchBranch)
           .then(initData)
           .then(switchBranch)
           .then(pullData)
@@ -65,6 +66,18 @@ module.exports = function (gruntOrShipit) {
     }
 
     /**
+     * Fetch branch info
+     */
+
+    function fetchBranch() {
+      shipit.log('Fetch branchs');
+      return shipit.local('git fetch -p jarvis-shipit', { cwd: shipit.config.workspace })
+        .then(function () {
+          shipit.log(chalk.green('Fetch branchs completed.'));
+        });
+    }
+
+    /**
      * Remove Untracked files
      */
 
@@ -95,7 +108,7 @@ module.exports = function (gruntOrShipit) {
 
     function switchBranch() {
       shipit.log('Switch branch to "%s"', shipit.config.branch);
-      return shipit.local('git checkout ' + shipit.config.branch, { cwd: shipit.config.workspace })
+      return shipit.local('git checkout -b ' + shipit.config.branch + ' jarvis-shipit/' + shipit.config.branch, { cwd: shipit.config.workspace })
         .then(function () {
           shipit.log(chalk.green('Switch branch completed.'));
         }, function () {
@@ -109,7 +122,7 @@ module.exports = function (gruntOrShipit) {
      */
 
     function pullData() {
-      shipit.log('Pull data from  "%s"', shipit.config.branch);
+      shipit.log('Pull data from "%s"', shipit.config.branch);
       return shipit.local('git pull jarvis-shipit ' + shipit.config.branch, { cwd: shipit.config.workspace })
         .then(function () {
           shipit.log(chalk.green('Pull data completed.'));
