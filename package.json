@@ -1,7 +1,7 @@
 {
-  "name": "shipit-deploy",
-  "version": "2.5.1",
-  "description": "Set of deployment tasks for Shipit based on git and rsync commands. ",
+  "name": "shipit-better-deploy",
+  "version": "0.0.1",
+  "description": "Set of deployment tasks for Shipit based on git and rsync commands. [upgrade for large project]",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -16,19 +16,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shipitjs/shipit-deploy.git"
+    "url": "https://github.com/bluedapp/shipit-better-deploy.git"
   },
   "keywords": [
     "shipit",
     "deploy",
     "task"
   ],
-  "author": "Greg Bergé <berge.greg@gmail.com>",
+  "author": "Jarvis jiashunming@outlook.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shipitjs/shipit-deploy/issues"
+    "url": "https://github.com/bluedapp/shipit-better-deploy/issues"
   },
-  "homepage": "https://github.com/shipitjs/shipit-deploy",
+  "homepage": "https://github.com/bluedapp/shipit-better-deploy",
   "devDependencies": {
     "chai": "^3.4.1",
     "mocha": "^2.1.0",
