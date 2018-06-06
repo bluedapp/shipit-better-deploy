@@ -108,12 +108,9 @@ module.exports = function (gruntOrShipit) {
 
     function switchBranch() {
       shipit.log('Switch branch to "%s"', shipit.config.branch);
-      return shipit.local('git checkout -b ' + shipit.config.branch + ' jarvis-shipit/' + shipit.config.branch, { cwd: shipit.config.workspace })
+      return shipit.local('git checkout ' + shipit.config.branch, { cwd: shipit.config.workspace })
         .then(function () {
           shipit.log(chalk.green('Switch branch completed.'));
-        }, function () {
-          return shipit.local('git branch ' + shipit.config.branch, { cwd: shipit.config.workspace })
-            .then(switchBranch) // FIXEME
         });
     }
 
