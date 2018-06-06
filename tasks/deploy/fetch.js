@@ -83,7 +83,7 @@ module.exports = function (gruntOrShipit) {
 
     function cleanRepository() {
       shipit.log('Clean repository');
-      return shipit.local('git clean -f', { cwd: shipit.config.workspace })
+      return shipit.local('git clean -fd', { cwd: shipit.config.workspace })
         .then(function () {
           shipit.log(chalk.green('Clean repository completed.'));
         });
