@@ -1,6 +1,6 @@
 {
   "name": "shipit-better-deploy",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Set of deployment tasks for Shipit based on git and rsync commands. [upgrade for large project]",
   "main": "index.js",
   "directories": {
