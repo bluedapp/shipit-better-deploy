@@ -1,3 +1,7 @@
+### v0.0.5
+
+Add `fetch -p` in every time to make sure branchs info synchronization with remote.
+
 ### v0.0.4
 
 Rmove `-b` flag in `git checkout`.
