@@ -21,6 +21,7 @@ module.exports = function (gruntOrShipit) {
       if (fs.existsSync(shipit.config.workspace)) {
         return cleanRepository()
           .then(resetModified)
+          .then(fetchBranch)
           .then(switchBranch)
           .then(pullData)
           .then(function () {
