@@ -16,19 +16,21 @@ npm i -D shipit-better-deploy
 ## How to use
 
 ```javascript
-module.exports = function (shipit) {
-  require('shipit-better-deploy')(shipit)
+module.exports = function(shipit) {
+  require("shipit-better-deploy")(shipit);
   // same code
   shipit.initConfig({
     default: {
       pullDataDeploy: true // default is `false`
     }
-  })
-}
+  });
+};
 ```
 
 ### Tips
 
-If you have used `shipit-deploy` before, you need to delete the `workspace` folder first, only to be slow for the first time.
+~~If you have used `shipit-deploy` before, you need to delete the `workspace` folder first, only to be slow for the first time.~~
+
+You need not remove the old folder after [0.0.6](/CHANGELOG.md#v006).
 
 have fun, enjoy the fast deploy.
